@@ -10,13 +10,25 @@ public class Stack {
         stackArray = new String[maxSize];
         top = -1;
     }
-    
+
+    // Retourne la grandeur de la pile actuelle
     public int size() {
-		// TODO
+        // Le top de la file correspond au dernier index
+        // Dans ce cas on retourne l'indice + 1 qui correspond à la size
+		return top + 1;
     }
-   
+
+    // Ajoute un élément au dessus de la pile
     public void push(String s) {
-		// TODO	   
+        // Vérification de la taille de la pile
+		if(size() < maxSize) {
+            // Ajout de l'élément au dessus de la pile
+            stackArray[size()] = s;
+            // Mise à jour du top
+            top += 1;
+        } else {
+            System.out.println('Capacité maximale de la pile atteinte.');
+        }
     }
 
     public String pop() {
