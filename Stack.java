@@ -14,33 +14,50 @@ public class Stack {
     // Retourne la grandeur de la pile actuelle
     public int size() {
         // Le top de la file correspond au dernier index
-        // Dans ce cas on retourne l'indice + 1 qui correspond à la size
+        // Dans ce cas on retourne l'indice + 1 qui correspond à la taille
 		return top + 1;
     }
 
     // Ajoute un élément au dessus de la pile
     public void push(String s) {
         // Vérification de la taille de la pile
-		if(size() < maxSize) {
-            // Ajout de l'élément au dessus de la pile
-            stackArray[size()] = s;
+		if(size() < maxSize && s != null) {
             // Mise à jour du top
             top += 1;
+            // Ajout de l'élément au dessus de la pile
+            stackArray[top] = s;
         } else {
-            System.out.println('Capacité maximale de la pile atteinte.');
+            System.out.println("Capacité maximale de la pile atteinte.");
         }
     }
 
+    // Retirer le dessus de la pile et le retourner
     public String pop() {
-		// TODO
-   }
-    
-    public String peek() {
-		// TODO
+        // Vérification de la taille de la pile
+        if(size() > 0) {
+            // Prend le dernier elem, l'enlève du tableau, ajuste l'indice du top et retourne celui-ci.
+            String elem = stackArray[top];
+            stackArray[top] = null;
+            top -= 1;
+            return elem;
+        } else {
+            System.out.println("Pile déjà vide");
+            return null;
+        }
    }
 
+    // Retourne le haut de la pile
+    public String peek() {
+        if(size() > 0) {
+            return stackArray[top];
+        }
+        // Null si la pile est vide
+		return null;
+   }
+
+    // Retourne si la pile est vide
     public boolean isEmpty() {
-		// TODO
+		return size() == 0;
     }
     
     // Print stack elements from top to bottom
@@ -70,10 +87,11 @@ public class Stack {
         System.out.println("Top element of the stack: " + stack.peek());
 
         
-        stack.pop();
-        stack.pop();
-        stack.pop(); 
+        System.out.println(stack.pop());
+        System.out.println(stack.pop());
+        System.out.println(stack.pop());
 
         System.out.println("Is stack empty? " + stack.isEmpty());
     }
 }
+
