@@ -41,7 +41,7 @@ public class Stack {
             top -= 1;
             return elem;
         } else {
-            System.out.println("Pile déjà vide");
+            System.out.println("Pile vide");
             return null;
         }
    }

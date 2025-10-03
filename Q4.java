@@ -4,14 +4,22 @@ public class Q4 {
 	
 	public static Stack names = new Stack(10);
 
-    // Question que faire quand la liste n'a qu'un seul noeud ??
-	
     // Retire l'élément à la position centrale de la liste, l'ajoute à la pile puis retourne le début de la liste.
 	public static Node rm_mid(Node head) {
+        // On s'assure que la liste n'est pas vide
+        if(head == null) return null;
+        int length = head.length_rec();
 		// Position centrale
-        int central_index = (int) Math.ceil(head.length_rec()/2.0);
+        int central_index = (int) Math.ceil(length/2.0);
         // Retire et retourne la personne à la position
-        Node mid_node = rm_index(head, central_index);
+        Node mid_node = rm_index(head, central_index, length);
+        // Dans le cas où le noeud retiré est la tête, alors la nouvelle tête est son prochain, on en déduit que si la
+        // la liste est vide alors null sera retourné.
+        if(mid_node == head) {
+            head = head.next;
+        }
+        // Dans le cas d'un retrait impossible on ne fait rien
+        if (mid_node == null) return null;
         // Ajoute le nom de la personne dans la stack
         names.push(mid_node.value);
         // Retourne le début de la liste
@@ -19,23 +27,37 @@ public class Q4 {
 	}
 
     // Retire le noeud à l'index i, l'indexation de la liste commence à 1, donc si on retire à l'index 5 ce sera le
-    // 5ème élément qui sera retiré.
-    public static Node rm_index(Node head, int index) {
+    // 5ème élément qui sera retiré. Si l'index est 1, alors rien n'est fait et on retourne le head
+    public static Node rm_index(Node head, int index, int length) {
         Node current_node = head;
         Node rm_node;
+        // Cas où l'index est 1 on retourne le head
+        if(index == 1){
+            return head;
+        // Index invalide
+        } else if (index > length) {
+            return null;
+        }
         // On arrête à la position avant le noeud
-        for (int i = 0; i < index - 1; i++) {
+        for (int i = 1; i < index - 1; i++) {
             current_node = current_node.next;
         }
+        // On retire le noeud et lie ses voisins
         rm_node = current_node.next;
         current_node.next = rm_node.next;
         return rm_node;
     }
 	
-	
+	// Étant donné une file et un entier K on retire la K ième personne à partir de la fin de la file puis place son nom
+    // dans la pile. Retourne la tête.
 	public static Node rm_k_end_iter(Node head, int k) {
-		// TODO
-        return null;
+		int length = head.length_iter();
+        int index = length - k + 1;
+        Node rm_node = rm_index(head, index, length);
+        if(rm_node == null) return head; // Index invalide
+        if (rm_node == head) head = head.next;
+        names.push(rm_node.value);
+        return head;
 	}
 	
 	
