@@ -18,12 +18,12 @@ public class Node {
 
     // Ajout d'un noeud à la fin de la liste
 	public void add_iter(String s) {
-        Node currentNode = this;
+        Node current_node = this;
         // Passe à travers tous les noeuds jusqu'au dernier, puis on ajoute newNode comme étant le next
-		while (currentNode.next != null) {
-            currentNode = currentNode.next;
+		while (current_node.next != null) {
+            current_node = current_node.next;
         }
-        currentNode.next =  new Node(s);
+        current_node.next =  new Node(s);
 	}
 
     // Ajouter un élément à la fin de la liste
@@ -40,24 +40,24 @@ public class Node {
     // Retourner la longueur de la liste
 	public int length_iter() {
 		int compteur  = 1;
-		Node currentNode = this;
+		Node current_node = this;
         // Tant que le noeud a un prochain on augmente le compteur
-		while (currentNode.next != null) {
+		while (current_node.next != null) {
             compteur++;
-            currentNode = currentNode.next;
+            current_node = current_node.next;
         }
         return compteur;
 	}
 
     // Retourner la longueur
 	public int length_rec() {
-		Node nodeNext = this.next;
+		Node node_next = this.next;
         // Cas de base, on retourne 1
-        if(nodeNext == null) {
+        if(node_next == null) {
             return 1;
         } else {
             // Si le prochain n'est pas null, on ajoute et appel récursif
-            return 1 + nodeNext.length_rec();
+            return 1 + node_next.length_rec();
         }
 	}
 	
