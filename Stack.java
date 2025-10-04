@@ -10,15 +10,24 @@ public class Stack {
         stackArray = new String[maxSize];
         top = -1;
     }
+    /**
+     * Retourne le nombre d'éléments actuellement présents dans la pile.
+     * La taille correspond à l'indice du sommet + 1.
+     *
+     * @return Le nombre d'éléments dans la pile.
+     */
 
-    // Retourne la grandeur de la pile actuelle
     public int size() {
-        // Le top de la file correspond au dernier index
-        // Dans ce cas on retourne l'indice + 1 qui correspond à la taille
 		return top + 1;
     }
+    /**
+     * Ajoute un élément au sommet de la pile si la capacité maximale n'est pas atteinte
+     * et si l'élément n'est pas nul.
+     * Affiche un message d'erreur si la pile est pleine.
+     *
+     * @param s L'élément string  ajouté à la pile.
+     */
 
-    // Ajoute un élément au dessus de la pile
     public void push(String s) {
         // Vérification de la taille de la pile
 		if(size() < maxSize && s != null) {
@@ -31,7 +40,12 @@ public class Stack {
         }
     }
 
-    // Retirer le dessus de la pile et le retourner
+    /**
+     * Retire et retourne l'élément au sommet de la pile.
+     * Si la pile est vide, affiche un message et retourne null.
+     *
+     * @return L'élément retiré du sommet de la pile, ou null si la pile est vide.
+     */
     public String pop() {
         // Vérification de la taille de la pile
         if(size() > 0) {
@@ -46,7 +60,12 @@ public class Stack {
         }
    }
 
-    // Retourne le haut de la pile
+    /**
+     * Retourne l'élément au sommet de la pile sans le retirer.
+     * Si la pile est vide, retourne null.
+     *
+     * @return L'élément au sommet de la pile, ou null si la pile est vide.
+     */
     public String peek() {
         if(size() > 0) {
             return stackArray[top];
@@ -55,7 +74,11 @@ public class Stack {
 		return null;
    }
 
-    // Retourne si la pile est vide
+    /**
+     * Vérifie si la pile est vide.
+     *
+     * @return true si la pile ne contient aucun élément, false sinon.
+     */
     public boolean isEmpty() {
 		return size() == 0;
     }
