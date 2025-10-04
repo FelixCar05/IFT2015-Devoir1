@@ -3,8 +3,16 @@ package ift2015_a25_tp1;
 public class Q4 {
 	
 	public static Stack names = new Stack(10);
+    /**
+     * Retire l'élément à la position centrale de la liste chaînée,
+     * ajoute sa valeur à la pile 'names', puis retourne le début de la liste.
+     * Si la liste est vide, ajoute "???" à la pile et retourne null.
+     * Si le retrait est impossible, la pile reçoit "???" et la liste reste inchangée.
+     *
+     * @param head Le début de la liste chaînée.
+     * @return Le nouveau début de la liste après suppression de l'élément central.
+     */
 
-    // Retire l'élément à la position centrale de la liste, l'ajoute à la pile puis retourne le début de la liste.
 	public static Node rm_mid(Node head) {
         // On s'assure que la liste n'est pas vide
         if(head == null) {
@@ -32,8 +40,20 @@ public class Q4 {
         return head;
 	}
 
-    // Retire le noeud à l'index i, l'indexation de la liste commence à 1, donc si on retire à l'index 5 ce sera le
-    // 5ème élément qui sera retiré. Si l'index est 1, alors rien n'est fait et on retourne le head
+
+    /**
+     * Retire l'élément à la position donnée (index) dans la liste chaînée,
+     * où l'indexation commence à 1 (le premier élément est à la position 1).
+     * Si l'index est 1, la méthode retourne simplement le premier élément sans modification(head).
+     * Si l'index est invalide (inférieur à 1 ou supérieur à la longueur de la liste), retourne null.
+     * Sinon, l'élément à la position spécifiée est retiré et retourné.
+     *
+     * @param head Le premier élément de la liste chaînée.
+     * @param index La position (à partir de 1) de l'élément à retirer.
+     * @param length La longueur totale de la liste.
+     * @return L'élément retiré à la position demandée, ou null si l'index est invalide.
+     */
+
     public static Node rm_index(Node head, int index, int length) {
         Node current_node = head;
         Node rm_node;
@@ -53,9 +73,17 @@ public class Q4 {
         current_node.next = rm_node.next;
         return rm_node;
     }
-	
-	// Étant donné une file et un entier K on retire la K ième personne à partir de la fin de la file puis place son nom
-    // dans la pile. Retourne la tête.
+    /**
+     * Retire l'élément à la position k en partant de la fin de la liste chaînée de façon itérative,
+     * place sa valeur dans la pile 'names', puis retourne le premier élément de la liste(head).
+     * Si le retrait n'est pas possible, "???" est ajouté à la pile et la liste reste inchangée.
+     * Si l'élément retiré est le premier, la tête de la liste est mise à jour.
+     *
+     * @param head Le premier élément de la liste chaînée.
+     * @param k La position à partir de la fin de la liste (1 = dernier élément).
+     * @return Le premier élément de la liste(head) après suppression de l'élément à la position demandée.
+     */
+
 	public static Node rm_k_end_iter(Node head, int k) {
 		int length = head.length_iter();
         // Index pour retirer le bon noeud
@@ -73,9 +101,17 @@ public class Q4 {
         names.push(rm_node.value);
         return head;
 	}
+    /**
+     * Retire l'élément à la position k en partant de la fin de la liste chaînée, de façon récursive,
+     * place sa valeur dans la pile 'names', puis retourne le premier élément de la liste(head).
+     * Si la position k est invalide ou si la liste est vide, "???" est ajouté à la pile et la liste reste inchangée.
+     * Si l'élément retiré est le premier, la tête de la liste est mise à jour.
+     *
+     * @param head Le premier élément de la liste chaînée.
+     * @param k La position à partir de la fin de la liste (1 = dernier élément).
+     * @return Le premier élément de la liste(head) après suppression de l'élément à la position demandée.
+     */
 
-    // Étant donné une file et un entier K on retire la K ième personne à partir de la fin de la file puis place son nom
-    // dans la pile. Retourne la tête. Récursivement
 	public static Node rm_k_end_rec(Node head, int k) {
         // Indice ou liste invalide
         if(head == null || k <= 0) {
@@ -92,9 +128,16 @@ public class Q4 {
         rmv_rec_k(false_head, k);
         return false_head.next;
 	}
+    /**
+     * Fonction récursive qui retourne la distance d'un élément par rapport à la fin de la liste,
+     * et supprime l'élément si sa distance correspond à la position k depuis la fin.
+     * Si la distance atteinte est k, l'élément à cette position est retiré et sa valeur ajoutée à la pile 'names'.
+     *
+     * @param current L'élément courant de la liste chaînée.
+     * @param k La position à partir de la fin de la liste (1 = dernier élément).
+     * @return La distance de l'élément courant par rapport à la fin de la liste.
+     */
 
-    // Fonction qui retourne la distance de puis la fin et supprime si nous sommes rendu au k ieme depuis la fin.
-    // Récursif
     public static int rmv_rec_k(Node current, int k) {
         // Rendu à la fin de la liste
         if(current.next == null) {
@@ -110,8 +153,17 @@ public class Q4 {
         }
         return dist_next;
     }
+    /**
+     * Retire l'élément situé juste après la position k dans la liste chaînée,
+     * place sa valeur dans la pile 'names', puis retourne le premier élément de la liste.
+     * Si la liste est invalide ou si la position k est inférieure à 1, ajoute "???" à la pile et retourne la liste inchangée.
+     * Si le retrait n'a pas fonctionné, ajoute également "???" à la pile.
+     *
+     * @param head Le premier élément de la liste chaînée.
+     * @param k La position dans la liste après laquelle l'élément doit être retiré.
+     * @return Le premier élément de la liste après suppression de l'élément.
+     */
 
-    // Fonction qui retire après le Kème indide, retourne ce noeud et place son nom dans la file.
     public static Node rm_after_k(Node head, int k) {
         // Liste invalide ou index, si index = 0 ça n'a pas vraiment de sens.
 		if(head == null || k < 1){
