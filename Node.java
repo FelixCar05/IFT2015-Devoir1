@@ -4,19 +4,35 @@ public class Node {
 	String value; // data of the node
 	Node next; // pointer to the next node
 
-    // Constructeur sans next
+    /**
+     * Constructeur qui crée un nœud avec la valeur spécifiée
+     * et sans nœud suivant (next est initialisé à null).
+     *
+     * @param s La chaîne de caractères à stocker dans ce nœud.
+     */
 	public Node(String s) {
         value = s;
         next = null;
 	}
 
-    // Constructeur avec un noeud next
+    /**
+     * Constructeur qui crée un nœud avec la valeur spécifiée
+     * et un lien vers le nœud suivant.
+     *
+     * @param s La chaîne de caractères à stocker dans ce nœud.
+     * @param next Le nœud suivant dans la liste (ou null si aucun).
+     */
 	public Node(String s, Node next) {
 		value = s;
         this.next = next;
 	}
 
-    // Ajout d'un noeud à la fin de la liste
+    /**
+     * Ajoute un nouveau nœud contenant la chaîne spécifiée à la fin de la liste chaînée.
+     * Parcourt la liste jusqu'au dernier nœud itérativement, puis ajoute le nouveau nœud comme suivant.
+     *
+     * @param s La chaîne de caractères à ajouter à la fin de la liste.
+     */
 	public void add_iter(String s) {
         Node current_node = this;
         // Passe à travers tous les noeuds jusqu'au dernier, puis on ajoute newNode comme étant le next
@@ -26,7 +42,12 @@ public class Node {
         current_node.next =  new Node(s);
 	}
 
-    // Ajouter un élément à la fin de la liste
+    /**
+     * Ajoute récursivement un nouveau nœud contenant la chaîne spécifiée à la fin de la liste chaînée.
+     * Parcourt la liste en profondeur jusqu'au dernier nœud, puis ajoute le nouveau nœud comme suivant.
+     *
+     * @param s La chaîne de caractères à ajouter à la fin de la liste.
+     */
 	public void add_rec(String s) {
         // Récursion lorsque le prochain noeud n'est pas nul
 		if (this.next != null) {
@@ -37,7 +58,12 @@ public class Node {
         }
 	}
 
-    // Retourner la longueur de la liste
+    /**
+     * Calcule et retourne la longueur de la liste chaînée de façon itérative.
+     * Parcourt chaque nœud à partir de celui-ci jusqu'à la fin de la liste.
+     *
+     * @return La longueur de la liste.
+     */
 	public int length_iter() {
 		int compteur  = 1;
 		Node current_node = this;
@@ -49,7 +75,12 @@ public class Node {
         return compteur;
 	}
 
-    // Retourner la longueur
+    /**
+     * Calcule et retourne la longueur de la liste chaînée de façon récursive.
+     * Ajoute 1 pour chaque nœud jusqu'à atteindre la fin de la liste.
+     *
+     * @return La longueur de la liste.
+     */
 	public int length_rec() {
 		Node node_next = this.next;
         // Cas de base, on retourne 1
