@@ -5,7 +5,7 @@ public class Node {
 	Node next; // pointer to the next node
 
     /**
-     * Constructeur qui crée un nœud de valeur chaîne s en ne mettant aucune valeur pour le noeud suivant
+     * Constructeur qui crée un nœud de valeur chaînes en ne mettant aucune valeur pour le noeud suivant
      * @param s La chaîne de caractères à stocker dans ce nœud.
      */
 
@@ -15,7 +15,7 @@ public class Node {
 	}
 
     /**
-     * Constructeur qui crée un nœud de valeur chaîne s en spécifiant une valeur pour le noeud suivant
+     * Constructeur qui crée un nœud de valeur chaînes en spécifiant une valeur pour le noeud suivant
      * @param s La chaîne de caractères à stocker dans ce nœud.
      * @param next Le nœud suivant dans la liste ou null si aucun.
      */
@@ -27,8 +27,8 @@ public class Node {
 
     /**
      * Méthode qui ajoute un élément à la fin de la liste d'une manière itérative.
-     * Parcourt la liste jusqu'au dernier nœud itérativement, puis crée un nouveau noeud avec
-     * la valeur du  string s à l'aide du constructeur node.
+     * Parcours la liste jusqu'au dernier nœud itérativement, puis crée un nouveau noeud avec
+     * la valeur du string à l'aide du constructeur node.
      *
      * @param s La chaîne de caractères à ajouter à la fin de la liste.
      */
@@ -45,7 +45,7 @@ public class Node {
     /**
      * Méthode qui ajoute un élément à la fin de la liste d'une manière récursive.
      * Parcourt la liste en appelant récursivement la méthode jusqu'à atteindre la fin de la liste(null).
-     * Une fois atteinte, un nouveau noeud est créer avec la valeur du  string s à l'aide du constructeur node.
+     * Une fois atteinte, un nouveau noeud est créé avec la valeur du string à l'aide du constructeur node.
      *
      * @param s La chaîne de caractères à ajouter à la fin de la liste.
      */
@@ -61,8 +61,8 @@ public class Node {
 	}
 
     /**
-     * Méthode qui retourne à l'aide d'un compteur  la longueur de la liste  de façon itérative.
-     * Parcourt itérativement chaque nœud à partir du début jusqu'à la fin de la liste en incrémentant le compteur.
+     * Méthode qui retourne à l'aide d'un compteur la longueur de la liste de façon itérative.
+     * Parcours itérativement chaque nœud à partir du début jusqu'à la fin de la liste en incrémentant le compteur.
      *
      * @return La longueur de la liste.
      */
@@ -79,7 +79,7 @@ public class Node {
 	}
 
     /**
-     * Méthode qui retourne  la longueur de la liste  de façon récursive.
+     * Méthode qui retourne la longueur de la liste de façon récursive.
      * On ajoute 1 et on appelle la méthode récursivement jusqu'à atteindre la fin de la liste(null)
      * qui nous rajoute le dernier 1.
      *

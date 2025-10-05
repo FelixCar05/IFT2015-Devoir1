@@ -21,7 +21,7 @@ public class Stack {
     }
 
     /**
-     * Méthode qui ajoute un string au sommet de la pile si la taille  maximale de la pile  n'est pas atteinte
+     * Méthode qui ajoute un string au sommet de la pile si la taille maximale de la pile n'est pas atteinte
      * et si le string n'est pas nul. Sinon, la méthode affiche un message d'erreur indiquant qu'il n'y a plus
      * de place dans la pile.
      * @param s L'élément string ajouté à la pile.
@@ -41,7 +41,7 @@ public class Stack {
 
     /**
      * Méthode qui retire et retourne le dernier élément de la pile.
-     * Si la pile est vide, affiche un message d'erreur  et retourne null.
+     * Si la pile est vide, affiche un message d'erreur et retourne null.
      *
      * @return le dernier élément de la pile, ou null si la pile est vide.
      */
