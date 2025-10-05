@@ -6,10 +6,11 @@ public class Node {
 
     /**
      * Constructeur qui crée un nœud avec la valeur spécifiée
-     * et sans nœud suivant (next est initialisé à null).
+     * et sans nœud suivant, next est mis à null.
      *
      * @param s La chaîne de caractères à stocker dans ce nœud.
      */
+
 	public Node(String s) {
         value = s;
         next = null;
@@ -20,8 +21,9 @@ public class Node {
      * et un lien vers le nœud suivant.
      *
      * @param s La chaîne de caractères à stocker dans ce nœud.
-     * @param next Le nœud suivant dans la liste (ou null si aucun).
+     * @param next Le nœud suivant dans la liste ou null si aucun.
      */
+
 	public Node(String s, Node next) {
 		value = s;
         this.next = next;
@@ -33,6 +35,7 @@ public class Node {
      *
      * @param s La chaîne de caractères à ajouter à la fin de la liste.
      */
+
 	public void add_iter(String s) {
         Node current_node = this;
         // Passe à travers tous les noeuds jusqu'au dernier, puis on ajoute newNode comme étant le next
@@ -48,6 +51,7 @@ public class Node {
      *
      * @param s La chaîne de caractères à ajouter à la fin de la liste.
      */
+
 	public void add_rec(String s) {
         // Récursion lorsque le prochain noeud n'est pas nul
 		if (this.next != null) {
@@ -64,6 +68,7 @@ public class Node {
      *
      * @return La longueur de la liste.
      */
+
 	public int length_iter() {
 		int compteur  = 1;
 		Node current_node = this;
@@ -81,6 +86,7 @@ public class Node {
      *
      * @return La longueur de la liste.
      */
+
 	public int length_rec() {
 		Node node_next = this.next;
         // Cas de base, on retourne 1

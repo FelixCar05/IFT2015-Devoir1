@@ -10,6 +10,7 @@ public class Stack {
         stackArray = new String[maxSize];
         top = -1;
     }
+
     /**
      * Retourne le nombre d'éléments actuellement présents dans la pile.
      * La taille correspond à l'indice du sommet + 1.
@@ -20,12 +21,13 @@ public class Stack {
     public int size() {
 		return top + 1;
     }
+
     /**
      * Ajoute un élément au sommet de la pile si la capacité maximale n'est pas atteinte
      * et si l'élément n'est pas nul.
      * Affiche un message d'erreur si la pile est pleine.
      *
-     * @param s L'élément string  ajouté à la pile.
+     * @param s L'élément string ajouté à la pile.
      */
 
     public void push(String s) {
@@ -46,6 +48,7 @@ public class Stack {
      *
      * @return L'élément retiré du sommet de la pile, ou null si la pile est vide.
      */
+
     public String pop() {
         // Vérification de la taille de la pile
         if(size() > 0) {
@@ -66,6 +69,7 @@ public class Stack {
      *
      * @return L'élément au sommet de la pile, ou null si la pile est vide.
      */
+
     public String peek() {
         if(size() > 0) {
             return stackArray[top];
@@ -79,6 +83,7 @@ public class Stack {
      *
      * @return true si la pile ne contient aucun élément, false sinon.
      */
+
     public boolean isEmpty() {
 		return size() == 0;
     }
