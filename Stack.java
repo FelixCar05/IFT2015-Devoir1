@@ -12,9 +12,7 @@ public class Stack {
     }
 
     /**
-     * Retourne le nombre d'éléments actuellement présents dans la pile.
-     * La taille correspond à l'indice du sommet + 1.
-     *
+     * Fonction qui retourne la taille de la pile. La taille correspond à l'indice du sommet + 1.
      * @return Le nombre d'éléments dans la pile.
      */
 
@@ -23,10 +21,9 @@ public class Stack {
     }
 
     /**
-     * Ajoute un élément au sommet de la pile si la capacité maximale n'est pas atteinte
-     * et si l'élément n'est pas nul.
-     * Affiche un message d'erreur si la pile est pleine.
-     *
+     * Fonction qui ajoute un string au sommet de la pile si la taille  maximale de la pile  n'est pas atteinte
+     * et si le string n'est pas nul. Sinon, la fonction affiche un message d'erreur indiquant qu'il n'y a plus
+     * de place dans la pile.
      * @param s L'élément string ajouté à la pile.
      */
 
@@ -43,10 +40,10 @@ public class Stack {
     }
 
     /**
-     * Retire et retourne l'élément au sommet de la pile.
-     * Si la pile est vide, affiche un message et retourne null.
+     * Fonction qui retire et retourne le dernier élément de la pile.
+     * Si la pile est vide, affiche un message d'erreur  et retourne null.
      *
-     * @return L'élément retiré du sommet de la pile, ou null si la pile est vide.
+     * @return le dernier élément de la pile, ou null si la pile est vide.
      */
 
     public String pop() {
@@ -64,10 +61,10 @@ public class Stack {
    }
 
     /**
-     * Retourne l'élément au sommet de la pile sans le retirer.
+     * Fonction qui retourne le dernier élément de la pile sans le retirer cette fois.
      * Si la pile est vide, retourne null.
      *
-     * @return L'élément au sommet de la pile, ou null si la pile est vide.
+     * @return Le dernier élément de la pile ou null si la pile est vide.
      */
 
     public String peek() {
@@ -79,7 +76,7 @@ public class Stack {
    }
 
     /**
-     * Vérifie si la pile est vide.
+     * fonction qui vérifie si la pile est vide.
      *
      * @return true si la pile ne contient aucun élément, false sinon.
      */
