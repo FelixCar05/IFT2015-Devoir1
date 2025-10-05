@@ -26,7 +26,7 @@ public class Node {
 	}
 
     /**
-     * Fonction qui ajoute un élément à la fin de la liste d'une manière itérative.
+     * Méthode qui ajoute un élément à la fin de la liste d'une manière itérative.
      * Parcourt la liste jusqu'au dernier nœud itérativement, puis crée un nouveau noeud avec
      * la valeur du  string s à l'aide du constructeur node.
      *
@@ -43,8 +43,8 @@ public class Node {
 	}
 
     /**
-     * Fonction qui ajoute un élément à la fin de la liste d'une manière récursive.
-     * Parcourt la liste en appelant récursivement la fonction jusqu'à atteindre la fin de la liste(null).
+     * Méthode qui ajoute un élément à la fin de la liste d'une manière récursive.
+     * Parcourt la liste en appelant récursivement la méthode jusqu'à atteindre la fin de la liste(null).
      * Une fois atteinte, un nouveau noeud est créer avec la valeur du  string s à l'aide du constructeur node.
      *
      * @param s La chaîne de caractères à ajouter à la fin de la liste.
@@ -61,7 +61,7 @@ public class Node {
 	}
 
     /**
-     * Fonction qui retourne à l'aide d'un compteur  la longueur de la liste  de façon itérative.
+     * Méthode qui retourne à l'aide d'un compteur  la longueur de la liste  de façon itérative.
      * Parcourt itérativement chaque nœud à partir du début jusqu'à la fin de la liste en incrémentant le compteur.
      *
      * @return La longueur de la liste.
@@ -79,8 +79,8 @@ public class Node {
 	}
 
     /**
-     * Fonction qui retourne  la longueur de la liste  de façon récursive.
-     * On ajoute 1 et on appelle la fonction recursivement jusqu'à atteindre la fin de la liste(null)
+     * Méthode qui retourne  la longueur de la liste  de façon récursive.
+     * On ajoute 1 et on appelle la méthode récursivement jusqu'à atteindre la fin de la liste(null)
      * qui nous rajoute le dernier 1.
      *
      * @return La longueur de la liste.

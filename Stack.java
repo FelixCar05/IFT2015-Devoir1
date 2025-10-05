@@ -12,7 +12,7 @@ public class Stack {
     }
 
     /**
-     * Fonction qui retourne la taille de la pile. La taille correspond à l'indice du sommet + 1.
+     * Méthode qui retourne la taille de la pile. La taille correspond à l'indice du sommet + 1.
      * @return Le nombre d'éléments dans la pile.
      */
 
@@ -21,8 +21,8 @@ public class Stack {
     }
 
     /**
-     * Fonction qui ajoute un string au sommet de la pile si la taille  maximale de la pile  n'est pas atteinte
-     * et si le string n'est pas nul. Sinon, la fonction affiche un message d'erreur indiquant qu'il n'y a plus
+     * Méthode qui ajoute un string au sommet de la pile si la taille  maximale de la pile  n'est pas atteinte
+     * et si le string n'est pas nul. Sinon, la méthode affiche un message d'erreur indiquant qu'il n'y a plus
      * de place dans la pile.
      * @param s L'élément string ajouté à la pile.
      */
@@ -40,7 +40,7 @@ public class Stack {
     }
 
     /**
-     * Fonction qui retire et retourne le dernier élément de la pile.
+     * Méthode qui retire et retourne le dernier élément de la pile.
      * Si la pile est vide, affiche un message d'erreur  et retourne null.
      *
      * @return le dernier élément de la pile, ou null si la pile est vide.
@@ -61,7 +61,7 @@ public class Stack {
    }
 
     /**
-     * Fonction qui retourne le dernier élément de la pile sans le retirer cette fois.
+     * Méthode qui retourne le dernier élément de la pile sans le retirer cette fois.
      * Si la pile est vide, retourne null.
      *
      * @return Le dernier élément de la pile ou null si la pile est vide.
@@ -76,7 +76,7 @@ public class Stack {
    }
 
     /**
-     * fonction qui vérifie si la pile est vide.
+     * Méthode qui vérifie si la pile est vide.
      *
      * @return true si la pile ne contient aucun élément, false sinon.
      */
